@@ -13,7 +13,7 @@ public class Main implements ActionListener{
     Switchboard db = new Switchboard();
 
     // Creating text-field
-    JTextField field = new JTextField("Insert", 10);
+    JTextField field = new JTextField("4 3 2", 10);
 
     Main(){
         // Creating main frame
@@ -56,8 +56,10 @@ public class Main implements ActionListener{
     public void actionPerformed(ActionEvent e) {
         if (e.getActionCommand().equals("Submit")){
             if(action.equals("n")) {
-                db.sort(field.getText(), action);
+                Equals.setEquals(db.sort(toArray(field.getText()), action));
+                new Equals();
             }
+
         } else if (e.getActionCommand().equals("Numbers")) {
             action = "n";
         }else if (e.getActionCommand().equals("Words")) {
@@ -66,9 +68,12 @@ public class Main implements ActionListener{
     }
 
     String[] toArray(String a){
+        a = a.replace(" ", "0");
+        String[] db = new String[a.length()];
         for (int i = 0; i < a.length(); i++) {
-
+            db[i] = String.valueOf(a.charAt(i));
         }
+        return db;
     }
 
     public static void main(String[] args) {

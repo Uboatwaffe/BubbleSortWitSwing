@@ -7,6 +7,7 @@ public class SortingNumbers {
         double[] db = new double[a.length];
 
         double cont;
+        boolean change = false;
 
         for (int i = 0; i < a.length; i++) {
             db[i] = Double.parseDouble(String.valueOf(a[i]));
@@ -15,12 +16,17 @@ public class SortingNumbers {
 
         for (int i = 0; i < db.length; i++) {
             for (int j = 0; j < db.length-1; j++) {
-                if (db[i] > db[i+1]){
-                    cont = db[i];
-                    db[i] = db[i+1];
-                    db[i+1] = cont;
+                if (db[j] > db[j+1]){
+                    double c = db[j];
+                    db[j] = db[j+1];
+                    db[j+1] = c;
+                    change = true;
                 }
             }
+            // If any change wasn't made exits
+            if (!change)
+                break;
+            change = false;
         }
 
         for (int i = 0; i < db.length; i++) {

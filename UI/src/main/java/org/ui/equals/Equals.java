@@ -1,12 +1,11 @@
 package org.ui.equals;
 
-import java.awt.event.*;
 import java.awt.*;
 import javax.swing.*;
 
 public class Equals {
     // Variables
-    String equals = "";
+    static String equals = "";
     public Equals(){
         // Creating main frame
         JFrame frm = new JFrame("Equals");
@@ -28,5 +27,12 @@ public class Equals {
 
         // Showing frame
         frm.setVisible(true);
+    }
+    public static void setEquals(String[] a){
+        for (String x:
+             a) {
+            equals += " " + x + " ";
+        }
+        equals = equals.trim();
     }
 }
