@@ -34,5 +34,9 @@ public class Equals {
             equals += " " + x + " ";
         }
         equals = equals.trim();
+        equals = equals.replace("0.0", "");
+    }
+    public static void clearEquals(){
+        equals = " ";
     }
 }

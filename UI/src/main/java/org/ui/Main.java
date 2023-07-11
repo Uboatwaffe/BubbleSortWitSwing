@@ -40,8 +40,8 @@ public class Main implements ActionListener{
         // Adding components to frame
         jfrm.add(up);
         jfrm.add(field);
-        jfrm.add(number);
-        jfrm.add(words);
+        //jfrm.add(number);
+        //jfrm.add(words);
         jfrm.add(submit);
 
         // Adding action listeners
@@ -56,6 +56,7 @@ public class Main implements ActionListener{
     public void actionPerformed(ActionEvent e) {
         if (e.getActionCommand().equals("Submit")){
             if(action.equals("n")) {
+                Equals.clearEquals();
                 Equals.setEquals(db.sort(toArray(field.getText()), action));
                 new Equals();
             }
